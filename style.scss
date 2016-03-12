@@ -1,0 +1,37 @@
+$color-hopbush: #c69;
+$patina: #699;
+$pale-sky: #6b717f;
+$nebula: #d2e1dd;
+
+$brand-primary: $color-hopbush;
+
+$font-head: "PT Sans Caption", Helvetica, sans-serif;
+$font-text: "PT Serif", Georgia, serif;
+
+$colors: (
+  "brand-primary": $brand-primary
+);
+
+.module {
+  background: map-get($colors, 'brand-primary');
+  font-family: $font-head;
+  &-nav {
+    color: #fff;
+    ul {
+      display: inline-block;
+      > ul {
+        position: absolute;
+        right: 100%;
+      }
+    }
+    a {
+      text-decoration: underline;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+
+

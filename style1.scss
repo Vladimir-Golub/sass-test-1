@@ -1,0 +1,67 @@
+@import '_base.scss';
+
+$color-hopbush: #c69;
+$patina: #699;
+$pale-sky: #6b717f;
+$nebula: #d2e1dd;
+$context-width: 600px;
+
+$font-head: "PT Sans Caption", Helvetica, sans-serif;
+$font-text: "PT Serif", Georgia, serif;
+
+@mixin box-sizing($box) {
+  -webkit-box-sizing: $box;
+  -moz-box-sizing: $box;
+  box-sizing: $box;
+}
+
+body {
+  font-size: 60%;
+  line-height:1.6;
+  color:darken($pale-sky, 15%);
+  @media screen and (min-width: 480px){
+    font-size: 75%;
+  }
+  @media screen and (min-width: 640px){
+    font-size: 100%;
+  }
+}
+
+%heading1 {
+  font-size: 3.75em;
+}
+%paragraph {
+  font-size: 1.3125em;
+}
+
+.module {
+  background: lighten($patina, 40%);
+  max-width: $context-width;
+  margin:auto;
+  padding:.5em 1em;
+  border: 1px solid $patina;
+  @include box-sizing(border-box);
+  border-radius: 3px;
+  &-heading {
+    @extend %heading1;
+    font-family: $font-head;
+    font-weight: 400;
+    color: $patina;
+  }
+  &-text {
+    @extend %paragraph;
+    font-family: $font-text;
+    width: 300px / $context-width * 100%;
+  }
+  &-link {
+    text-decoration: none;
+    color: $color-hopbush;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.module2 {
+  @extend .module;
+}
